@@ -98,7 +98,6 @@ input[type=file] {
   --neutral-color-100: hsl(0, 100%, 100%);
   --neutral-color-500: hsl(217, 12%, 63%);
   --neutral-color-700: hsl(215, 18%, 19%);
-  --neutral-color-900: hsl(213, 19%, 18%);
   --neutral-color-900: hsl(215.29 23.29% 14.31%);
   --neutral-color-950: hsl(216, 12%, 8%);
   --bg-color: var(--neutral-color-950);
@@ -251,8 +250,6 @@ body {
 .dialog {
   --content-max-width: 25.875rem;
   --offset-inline: 1.5rem;
-  position: fixed;
-  inset: 0;
   width: min(var(--content-max-width), 100% - var(--offset-inline) * 2);
   margin: auto;
   padding: 1.5rem 1.5rem 1.875rem;
