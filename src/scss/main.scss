@@ -59,6 +59,8 @@ body {
   border-radius: 1rem;
   color: var(--neutral-color-100);
   background-color: var(--neutral-color-900);
+  will-change: max-height;
+  transition: max-height 60s ease;
 
   &__icon {
     display: flex;

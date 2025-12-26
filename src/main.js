@@ -7,6 +7,7 @@ const errorContainer = form.querySelector('.error') ?? document.createElement('d
 
 inputs.forEach(input => {
   input.addEventListener('change', () => {
+    input.classList.remove('hasActive')
     errorContainer.setAttribute('hidden', true)
   })
 })
