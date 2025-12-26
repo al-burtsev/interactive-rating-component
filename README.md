@@ -43,5 +43,5 @@ Users should be able to:
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/al-burtsev)
+- Frontend Mentor - [@al-burtsev](https://www.frontendmentor.io/profile/al-burtsev)
 - TG - [@al-burtsevv](https://t.me/al_burtsevv)
