@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
+
+  <title>Interactive rating component | Frontend Mentor</title>
+  <script type="module" crossorigin src="/interactive-rating-component/assets/index-BAxO6cep.js"></script>
+  <link rel="stylesheet" crossorigin href="/interactive-rating-component/assets/index-tDSIGkWH.css">
+</head>
+
+<body>
+  <main class="main">
+    <h1 class="sr-only">Interactive rating component</h1>
+    <article class="rating">
+      <div class="rating-card">
+        <div class="rating-card__icon">
+          <svg viewBox="0 0 17 16" width="17" height="16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path
+              d="m9.067.43 1.99 4.031c.112.228.33.386.58.422l4.45.647a.772.772 0 0 1 .427 1.316l-3.22 3.138a.773.773 0 0 0-.222.683l.76 4.431a.772.772 0 0 1-1.12.813l-3.98-2.092a.773.773 0 0 0-.718 0l-3.98 2.092a.772.772 0 0 1-1.119-.813l.76-4.431a.77.77 0 0 0-.222-.683L.233 6.846A.772.772 0 0 1 .661 5.53l4.449-.647a.772.772 0 0 0 .58-.422L7.68.43a.774.774 0 0 1 1.387 0Z"
+              fill="#FC7614" />
+          </svg>
+        </div>
+        <h2 class="rating-card__title">How did we do?</h2>
+        <p class="rating-card__descr">Please let us know how we did with your support request. All feedback is
+          appreciated
+          to help us improve our offering!</p>
+        <form class="rating-form" id="rating-form" action="" method="POST">
+          <fieldset>
+            <legend></legend>
+            <ul class="rating-form__list">
+              <li class="rating-form__list-item">
+                <input class="rating-form__radio" type="radio" name="rating-value" value="1" aria-label="Rating 1">
+              </li>
+              <li class="rating-form__list-item"> <input class="rating-form__radio" type="radio" name="rating-value"
+                  value="2" aria-label="Rating 2">
+              </li>
+              <li class="rating-form__list-item"> <input class="rating-form__radio" type="radio" name="rating-value"
+                  value="3" aria-label="Rating 3">
+              </li>
+              <li class="rating-form__list-item"> <input class="rating-form__radio" type="radio" name="rating-value"
+                  value="4" aria-label="Rating 4">
+              </li>
+              <li class="rating-form__list-item"> <input class="rating-form__radio" type="radio" name="rating-value"
+                  value="5" aria-label="Rating 5">
+              </li>
+            </ul>
+          </fieldset>
+          <button type="submit" class="rating-form__submit">submit</button>
+        </form>
+      </div>
+      <dialog class="dialog" id="rating-dialog">
+        <div class="dialog__wrapper">
+          <img class="dialog__img" src="/interactive-rating-component/illustration-thank-you.svg" alt="" aria-hidden="true" draggable="false">
+          <div class="dialog__result">You selected <span id="result-rating"></span> out of 5</div>
+
+          <h2 class="dialog__title">Thank you!
+          </h2>
+
+          <p class="dialog__descr">We appreciate you taking the time to give a rating. If you ever need more support,
+            don’t hesitate to get in touch!</p>
+        </div>
+      </dialog>
+    </article>
+  </main>
+</body>
+
+</html>
