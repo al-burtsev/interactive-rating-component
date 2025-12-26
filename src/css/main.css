@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap");
+/* Reset and base styles  */
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Links */
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Common */
+aside,
+nav,
+footer,
+header,
+section,
+main {
+  display: block;
+}
+
+ul,
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button,
+input[type=submit] {
+  display: inline-block;
+  box-shadow: none;
+  background: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
+
+input[type=file] {
+  max-width: 100%;
+}
+
+:root {
+  --primary-color-500: hsl(25, 97%, 53%);
+  --neutral-color-100: hsl(0, 100%, 100%);
+  --neutral-color-500: hsl(217, 12%, 63%);
+  --neutral-color-700: hsl(215, 18%, 19%);
+  --neutral-color-900: hsl(213, 19%, 18%);
+  --neutral-color-900: hsl(215.29 23.29% 14.31%);
+  --neutral-color-950: hsl(216, 12%, 8%);
+  --bg-color: var(--neutral-color-950);
+  --text-color: var(--neutral-color-100);
+  --font-family: "Overpass", sans-serif;
+}
+
+::selection {
+  color: var(--primary-color-500);
+  background-color: var(--bg-color);
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 0.0625rem;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 0.0625rem;
+}
+
+.main {
+  --content-max-width: 25.875rem;
+  --offset-inline: 1.5rem;
+  display: grid;
+  place-items: center;
+  place-content: center;
+  min-height: 100svh;
+  width: min(var(--content-max-width), 100% - var(--offset-inline) * 2);
+  margin-inline: auto;
+}
+
+.rating-card {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem 1.5rem 1.875rem;
+  border-radius: 1rem;
+  color: var(--neutral-color-100);
+  background-color: var(--neutral-color-900);
+}
+.rating-card__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--neutral-color-700);
+}
+.rating-card__icon svg {
+  width: 0.875rem;
+  height: 0.8125rem;
+}
+.rating-card__title {
+  font-size: clamp(1.5rem, 4vw, 1.75rem);
+}
+.rating-card__descr {
+  margin-block-end: 0.625rem;
+  font-size: clamp(0.875rem, 4vw, 0.9375rem);
+  color: var(--neutral-color-500);
+}
+
+.rating-form {
+  display: grid;
+  gap: 1.5rem;
+}
+.rating-form__list {
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: column;
+}
+.rating-form__list-item {
+  counter-increment: rating;
+}
+.rating-form__radio {
+  appearance: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--neutral-color-700);
+  box-shadow: 0.125rem 0.0625rem 0.3125rem var(--neutral-color-900);
+  border-radius: 50%;
+  cursor: pointer;
+  will-change: scale;
+  transition: background-color 0.5s, outline-color 0.3s, outline-offset 0.2s, scale 0.4s ease-out;
+}
+@media (any-hover: hover) {
+  .rating-form__radio:hover {
+    background-color: var(--primary-color-500);
+  }
+  .rating-form__radio:hover::after {
+    color: var(--neutral-color-900);
+  }
+}
+.rating-form__radio.hasActive:focus, .rating-form__radio:focus-visible {
+  outline: 0.125rem solid var(--primary-color-500);
+  outline-offset: 0.25rem;
+}
+.rating-form__radio:active {
+  transition: scale 0.1s ease-out;
+  scale: 0.95;
+}
+.rating-form__radio:checked {
+  background-color: var(--neutral-color-100);
+}
+.rating-form__radio:checked::after {
+  color: var(--neutral-color-900);
+}
+.rating-form__radio::after {
+  content: counter(rating);
+  font-weight: 700;
+  color: var(--neutral-color-500);
+}
+.rating-form__submit {
+  padding: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 2rem;
+  color: var(--neutral-color-950);
+  background-color: var(--primary-color-500);
+  will-change: scale;
+  transition: background-color 0.5s, outline-color 0.3s, outline-offset 0.2s, scale 0.3s ease-in;
+}
+@media (any-hover: hover) {
+  .rating-form__submit:hover {
+    background-color: var(--neutral-color-100);
+  }
+}
+.rating-form__submit:focus-visible {
+  outline: 0.125rem solid var(--neutral-color-100);
+  outline-offset: 0.25rem;
+}
+.rating-form__submit:active {
+  transition: scale 0.2s ease-out;
+  scale: 0.95;
+}
+
+.dialog {
+  --content-max-width: 25.875rem;
+  --offset-inline: 1.5rem;
+  position: fixed;
+  inset: 0;
+  width: min(var(--content-max-width), 100% - var(--offset-inline) * 2);
+  margin: auto;
+  padding: 1.5rem 1.5rem 1.875rem;
+  text-align: center;
+  border-radius: 1rem;
+  color: var(--neutral-color-100);
+  background-color: var(--neutral-color-900);
+}
+.dialog[open] {
+  animation: slideIn 0.6s forwards;
+}
+.dialog__wrapper {
+  padding-block: 1rem;
+}
+.dialog__img {
+  margin-block-end: 1.25rem;
+  user-select: none;
+}
+.dialog__result {
+  width: fit-content;
+  margin-inline: auto;
+  margin-block-end: 1.875rem;
+  padding: 0.3125rem 0.9375rem;
+  border-radius: 2rem;
+  color: var(--primary-color-500);
+  background-color: var(--neutral-color-700);
+}
+.dialog__title {
+  margin-block-end: 1.25rem;
+}
+.dialog__descr {
+  color: var(--neutral-color-500);
+}
+
+.error[hidden=true] {
+  display: none;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  35% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@media (width > 48rem) {
+  .rating-card {
+    gap: 1.5rem;
+  }
+  .rating-card__icon {
+    width: 3.125rem;
+    height: 3.125rem;
+  }
+  .rating-card,
+  .dialog {
+    padding: 2rem 2rem 1.875rem;
+    border-radius: 2rem;
+  }
+  .rating-form__radio {
+    width: 3.125rem;
+    height: 3.125rem;
+  }
+  .dialog__img {
+    margin-block-end: 2rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
